@@ -1,0 +1,14 @@
+version: '3'
+services:
+  organizr:
+    image: organizr/organizr
+    container_name: organizr
+    environment:
+      - PUID=PUID
+      - PGID=PGID
+      - TZ=timezone
+    ports:
+      - 80:80
+    volumes:
+      - /path/to/organizr:/config
+    restart: unless-stopped   

@@ -1,0 +1,35 @@
+version: '3'
+services:
+  papermerge:
+    image:  papermerge/papermerge:latest
+    container_name: papermerge
+    environment:
+      - PUID=PUID
+      - PGID=PGID
+      - TZ=timezone
+      - REDIS_URL= #optional
+      - PAPERMERGE__MAIN__SECRET_KEY=secret_key
+      - DJANGO_SUPERUSER_PASSWORD=supersecretpassword
+      - DJANGO_SUPERUSER_USERNAME=username
+      - PAPERMERGE__DATABASE__TYPE=postgres
+      - PAPERMERGE__DATABASE__USER=postgres
+      - PAPERMERGE__DATABASE__PASSWORD=db_password
+      - PAPERMERGE__DATABASE__NAME=postgres
+      - PAPERMERGE__DATABASE__HOST=db
+    volumes:
+      - /path/to/config:/config
+      - /path/to/data:/data
+    ports:
+      - 4325:8000
+    restart: unless-stopped
+    depends_on:
+      - db
+      
+  db:
+    image: bitnami/postgresql
+    container_name: papermerge_db
+    volumes:
+      - /path/to/postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_PASSWORD=db_password   
+    restart: unless-stopped  

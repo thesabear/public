@@ -1,0 +1,19 @@
+version: '3'
+services:
+  actual_server:
+    image: actualbudget/actual-server:latest
+    container_name: actual
+    ports:
+      - 5006:5006
+    environment:
+      - PUID=PUID
+      - PGID=PGID
+      - TZ=timezone
+      # Uncomment any of the lines below to set configuration options.
+      # - ACTUAL_HTTPS_KEY=/data/selfhost.key
+      # - ACTUAL_HTTPS_CERT=/data/selfhost.crt
+      # See all options and more details at https://actualbudget.github.io/docs/Installing/Configuration
+      # !! If you are not using any of these options, remove the 'environment:' tag entirely.
+    volumes:
+      - /path/to/actual-data:/data
+    restart: unless-stopped

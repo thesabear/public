@@ -1,0 +1,16 @@
+version: '3'
+services:
+  duplicati:
+    image: lscr.io/linuxserver/duplicati:latest
+    container_name: duplicati
+    environment:
+      - PUID=PUID #setting PUID as 0 (root) is required to give permissions for all tasks
+      - PGID=PGID #setting PGID as 0 (root) is required to give permissions for all tasks
+      - TZ=timezone
+    volumes:
+      - /path/to/appdata/config:/config
+      - /path/to/backups:/backups
+      - /path/to/source:/source
+    ports:
+      - 8200:8200
+    restart: unless-stopped  

@@ -1,0 +1,12 @@
+version: '3'
+services:
+  whoogle:
+    image: benbusby/whoogle-search:latest
+    container_name: whoogle
+    environment:
+      - PUID=PUID
+      - PGID=PGID
+      - TZ=timezone
+    ports:
+      - 5000:5000
+    restart: unless-stopped

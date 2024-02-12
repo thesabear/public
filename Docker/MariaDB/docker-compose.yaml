@@ -1,0 +1,19 @@
+version: '3'
+services:
+  mariadb:
+    image: lscr.io/linuxserver/mariadb:latest
+    container_name: mariadb
+    environment:
+      - PUID=PUID
+      - PGID=PGID
+      - TZ=timezone
+      - MYSQL_ROOT_PASSWORD=rootpassword
+      - MYSQL_DATABASE=database_name #optional
+      - MYSQL_USER=user #optional
+      - MYSQL_PASSWORD=userpassword #optional
+      - REMOTE_SQL=http://URL1/your.sql,https://URL2/your.sql #optional
+    volumes:
+      - /path/to/mariadb/config:/config
+    ports:
+      - 3306:3306
+    restart: unless-stopped  

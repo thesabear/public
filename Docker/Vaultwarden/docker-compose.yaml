@@ -1,0 +1,16 @@
+version: '3'
+services:
+  bitwarden:
+    image: vaultwarden/server:latest
+    container_name: vaultwarden
+    restart: always
+    ports:
+      - 80:80
+    volumes:
+      - /path/to/bw-data:/data
+    environment:
+      - PUID=PUID
+      - PGID=PGID
+      - TZ=timezone
+      - WEBSOCKET_ENABLED='true' # Required to use websockets
+      - SIGNUPS_ALLOWED='true'   # set to false to disable signups

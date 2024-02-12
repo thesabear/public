@@ -1,0 +1,18 @@
+version: '3'
+services:
+  calibre:
+    image: lscr.io/linuxserver/calibre:latest
+    container_name: calibre
+    environment:
+      - PUID=PUID
+      - PGID=PGID
+      - TZ=timezone
+      - CUSTOM_USER=user
+      - PASSWORD=password
+    volumes:
+      - /path/to/calibre:/config
+      - /path/to/books:/books
+    ports:
+      - 8080:8080
+      - 8081:8081
+    restart: unless-stopped

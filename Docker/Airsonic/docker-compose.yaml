@@ -1,0 +1,19 @@
+  airsonic-advanced:
+    image: lscr.io/linuxserver/airsonic-advanced:latest
+    container_name: airsonic-advanced
+    environment:
+      - PUID=PUID
+      - PGID=PGID # Note that if you want to use Airsonic's Java jukebox player, then PGID will need to match the group of your sound device (e.g. /dev/snd).
+      - TZ=timezone
+    volumes:
+      - /path/toairsonic-advanced:/config
+      - /path/to/music:/music
+      - /path/to/playlists:/playlists
+      - /path/to/audiobooks:/audiobooks
+      - </path/to/other media:/media #optional
+    ports:
+      - 4040:4040
+      - 4041:4041
+    devices:
+      - /dev/snd:/dev/snd #need this to enable jukebox mode on the server
+    restart: unless-stopped  

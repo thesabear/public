@@ -1,6 +1,7 @@
 - 👋 Hi, I’m @thesabear,
      I'm on an exciting journey to expand my knowledge and gain hands-on experience in various technology domains. My ultimate goal? To pivot into a rewarding career in the dynamic field of IT.  
-- 👀 I'm constantly seeking opportunities to deepen my understanding of IT concepts within my homelab environment. From programming languages and exploring cybersecurity to delving into networking and 
+- 👀 I'm constantly seeking opportunities to deepen my understanding of IT concepts within my homelab environment.
+     From programming languages and exploring cybersecurity to delving into networking and 
      infrastructure. Each day presents a new chance to enhance my skills and broaden my expertise. 
 - 🌱 I’m currently learning Kubernetes and Terraform and plans for future learning include Ansible, Python, and Bash scripting
 - 😄 Pronouns: He/Him

@@ -2,7 +2,7 @@ resource "proxmox_vm_qemu" "test_one" {
     count = 1
     vmid = 100
     name = "test_one"
-    target_node = "hyper2"
+    target_node = "nodename"
     clone = "ubuntu-cloud"
 
     onboot = true

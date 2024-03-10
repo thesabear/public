@@ -26,15 +26,3 @@ flux bootstrap github \
   --token-auth
 
 
-  network:
-  version: 2
-  renderer: networkd
-  ethernets:
-     enp5s0:
-        dhcp4: no
-        addresses: [10.27.27.21/24]
-        nameservers:
-           addresses: [10.27.27.1]
-        routes:
-            - to: default
-              via: 10.27.27.1
